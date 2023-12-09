@@ -1,0 +1,77 @@
+:root {
+    --background: #F2F5F7;
+    --background-10: #F2F5F760;
+    --blue: #166AA2;
+    --light-blue: #DBEAF5;
+}
+
+
+
+html {
+    width: 100vw;
+    font-family: Avenir Next;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 2.5rem;
+    padding: 0;
+}
+
+
+
+
+h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: Avenir Next;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+
+h2 {
+    color: #000;
+    text-align: center;
+    font-family: Avenir Next;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+h3 {
+    color: #000;
+    font-family: Avenir Next;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+h4 {
+    color: #FFF;
+    text-align: center;
+    font-family: Avenir Next;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+h5 {
+    color: #000;
+    font-family: Avenir Next;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}

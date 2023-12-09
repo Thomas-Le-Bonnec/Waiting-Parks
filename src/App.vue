@@ -1,26 +1,50 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavigationBar ref="header"></NavigationBar>
+    <main ref="pageContent">
+        <BannerView></BannerView>
+        <ParkCarroussel></ParkCarroussel>
+    </main>
 </template>
 
+
+
+
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavigationBar from './components/NavigationBar.vue'
+import BannerView from './components/BannerView.vue'
+import ParkCarroussel from './components/ParkCarroussel.vue'
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    
+    components: {
+        NavigationBar, BannerView, ParkCarroussel
+    },
+
+    methods: {
+        addPaddingOnLoad() {
+            // To prevent the content of the page to be bellow the header
+            const headerHeight = this.$refs.header.$el.offsetHeight;
+            this.$refs.pageContent.style.paddingTop = headerHeight + 'px';
+        }
+    },
+
+    mounted() {
+        this.addPaddingOnLoad();
+    },
+
+    updated() {
+        this.addPaddingOnLoad();
+    }
 }
 </script>
 
+
+
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./styles/style.css";
 </style>
