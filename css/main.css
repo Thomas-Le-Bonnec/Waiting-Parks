@@ -1,0 +1,81 @@
+.reviews {
+    max-width: 600px;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    font-weight: bold;
+}
+
+.review-author {
+    color: #555;
+}
+
+.no-reviews {
+    margin-top: 20px;
+    color: #777;
+}
+
+.review-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.amusement-park-ticket {
+    display: flex;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.ticket-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.ticket-details {
+    padding: 20px;
+}
+
+.price-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-option {
+    margin-bottom: 10px;
+}
+
+.ticket-price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ticket-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}

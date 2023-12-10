@@ -10,6 +10,11 @@
                 <h5>My Favorite Parks</h5>
             </router-link>
         </div>
+        <div class="link">
+            <router-link to="/test">
+                <h5>Test</h5>
+            </router-link>
+        </div>
     </header>
 </template>
 
