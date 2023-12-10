@@ -1,6 +1,6 @@
 <template>
     <div id="banner">
-        <img src="../assets/banner-image.jpg">
+        <img src="../../assets/banner-image.jpg">
         <h1>Waiting Times in Parks</h1>
     </div>
 </template>

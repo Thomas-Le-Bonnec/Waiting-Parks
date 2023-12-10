@@ -1,10 +1,14 @@
 <template>
     <header>
         <div class="link">
-            <h5>Waiting Parks</h5>
+            <router-link to="/">
+                <h5>Waiting Parks</h5>
+            </router-link>
         </div>
         <div class="link">
-            <h5>My Favorite Parks</h5>
+            <router-link to="/favorites">
+                <h5>My Favorite Parks</h5>
+            </router-link>
         </div>
     </header>
 </template>
@@ -34,7 +38,7 @@ header {
     width: 100%;
 
     background: var(--background-10);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 
 

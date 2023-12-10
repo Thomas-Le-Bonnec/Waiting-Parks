@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img src="../assets/disneyland-park.jpg">
+        <img src="../../assets/disneyland-park.jpg">
         <div class="title">
             <h4>Disneyland Park</h4>
         </div>
@@ -28,6 +28,7 @@
     overflow: hidden;
 
     border-radius: 8px;
+    transition: box-shadow 0.1s ease;
 }
 
 .card img {
@@ -51,5 +52,11 @@
 
 .card h4 {
     padding: 16px;
+}
+
+
+
+.card:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
 }
 </style>

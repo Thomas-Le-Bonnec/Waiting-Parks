@@ -1,8 +1,7 @@
 <template>
     <NavigationBar ref="header"></NavigationBar>
     <main ref="pageContent">
-        <BannerView></BannerView>
-        <ParkCarroussel></ParkCarroussel>
+        <RouterView></RouterView>
     </main>
 </template>
 
@@ -11,16 +10,14 @@
 
 
 <script>
-import NavigationBar from './components/NavigationBar.vue'
-import BannerView from './components/BannerView.vue'
-import ParkCarroussel from './components/ParkCarroussel.vue'
+import NavigationBar from './components/ReusableComponents/NavigationBar.vue';
 
 
 export default {
     name: 'App',
     
     components: {
-        NavigationBar, BannerView, ParkCarroussel
+        NavigationBar
     },
 
     methods: {

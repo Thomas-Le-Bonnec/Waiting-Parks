@@ -1,6 +1,6 @@
 :root {
     --background: #F2F5F7;
-    --background-10: #F2F5F760;
+    --background-10: #F2F5F799;
     --blue: #166AA2;
     --light-blue: #DBEAF5;
 }
@@ -74,4 +74,13 @@ h5 {
     font-weight: 500;
     line-height: normal;
     margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--blue);
 }
