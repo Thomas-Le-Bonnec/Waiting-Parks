@@ -13,6 +13,7 @@
 
 
 <script>
+import { Country } from '@/data/parks';
 import ParkCard from './ParkCard.vue'
 
 
@@ -23,7 +24,9 @@ export default {
         ParkCard
     },
 
-    props: ['country']
+    props: {
+        country: Country
+    }
 }
 </script>
 

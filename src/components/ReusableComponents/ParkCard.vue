@@ -1,10 +1,12 @@
 <template>
-    <div class="card">
-        <img :src="park.image">
-        <div class="title">
-            <h4>{{ park.name }}</h4>
+    <router-link :to="'/park/' + park.name">
+        <div class="card">
+            <img :src="park.image">
+            <div class="title">
+                <h4>{{ park.name }}</h4>
+            </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 
@@ -12,8 +14,12 @@
 
 
 <script>
+import { Park } from '@/data/parks';
+
 export default {
-    props: ['park']
+    props: {
+        park: Park
+    }
 }
 </script>
 

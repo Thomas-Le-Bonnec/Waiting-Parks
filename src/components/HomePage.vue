@@ -8,6 +8,7 @@
 
 
 <script>
+import { Country } from '@/data/parks';
 import BannerView from './ReusableComponents/BannerView.vue'
 import ParkCarroussel from './ReusableComponents/ParkCarroussel.vue'
 
@@ -17,7 +18,9 @@ export default {
         BannerView, ParkCarroussel
     },
 
-    props: ['parksByCountries'],
+    props: {
+        parksByCountries: [Country]
+    },
 
     mounted() {
         console.log(this.parksByCountries);

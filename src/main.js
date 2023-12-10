@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { createApp } from 'vue'
 
 import FavoriteParksPage from './components/FavoriteParksPage.vue'
+import ParkDetailPage from './components/ParkDetailPage.vue'
 import TestPage from './components/TestPage.vue'
 import HomePage from './components/HomePage.vue'
 import App from './App.vue'
@@ -15,6 +16,7 @@ const router = createRouter({
 	routes: [
 		{ path: '/', component: HomePage },
 		{ path: '/favorites', component: FavoriteParksPage },
+        { path: '/park/:parkName', component: ParkDetailPage },
 		{ path: '/test', component: TestPage }
 	]
 })

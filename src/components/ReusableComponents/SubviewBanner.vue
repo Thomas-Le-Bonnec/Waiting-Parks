@@ -1,7 +1,7 @@
 <template>
     <div id="banner">
-        <img src="../../assets/banner-image.jpg">
-        <h1>Waiting Times in Parks</h1>
+        <img :src="park.image">
+        <h1>{{ park.name }}</h1>
     </div>
 </template>
 
@@ -10,6 +10,13 @@
 
 
 <script>
+import { Park } from '@/data/parks';
+
+export default {
+    props: {
+        park: Park
+    }
+}
 </script>
 
 
@@ -35,8 +42,7 @@
 
 #banner h1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 1.5rem;
+    left: 2rem;
 }
 </style>
