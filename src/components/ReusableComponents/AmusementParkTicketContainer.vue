@@ -29,7 +29,7 @@ export default {
 </script>
   
 <style scoped>
-@import '../../../css/main.css';
-@import '../../../css/responsive.css';
+@import '../../styles/main.css';
+@import '../../styles/responsive.css';
 </style>
   
