@@ -38,7 +38,7 @@ import ParkCard from './ParkCard.vue'
 
 export default {
     name: 'App',
-    
+
     components: {
         ParkCard
     },

@@ -5,6 +5,7 @@ import FavoriteParksPage from './components/FavoriteParksPage.vue'
 import TestPage from './components/TestPage.vue'
 import HomePage from './components/HomePage.vue'
 import App from './App.vue'
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 const app = createApp(App)

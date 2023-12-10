@@ -2,57 +2,67 @@
 
 <template>
     <form @submit.prevent="submitReview">
-      <label for="name">Name:</label>
-      <input type="text" id="name" v-model="review.name" required />
-  
-      <label for="email">Email:</label>
-      <input type="email" id="email" v-model="review.email" required />
-  
-      <label for="rating">Rating:</label>
-      <select id="rating" v-model="review.rating" required>
-        <option value="5">5 stars</option>
-        <option value="4">4 stars</option>
-        <option value="3">3 stars</option>
-        <option value="2">2 stars</option>
-        <option value="1">1 star</option>
-      </select>
-  
-      <label for="content">Review:</label>
-      <textarea id="content" v-model="review.content" required></textarea>
-  
-      <button type="submit">Submit Review</button>
+        <label>
+            <i class="fas fa-user"></i> Name:
+            <input type="text" v-model="review.name" required />
+        </label>
+
+        <label>
+            <i class="fas fa-envelope"></i> Email:
+            <input type="email" v-model="review.email" required />
+        </label>
+
+        <label>
+            <i class="fas fa-star"></i> Rating:
+            <ul class="star-rating">
+                <li v-for="star in 5" :key="star" @click="setRating(star)">
+                    <i :class="{ 'fas fa-star': star <= review.rating, 'far fa-star': star > review.rating }"></i>
+                </li>
+            </ul>
+        </label>
+
+        <label>
+            <i class="fas fa-comment"></i> Review:
+            <textarea v-model="review.content" required></textarea>
+        </label>
+
+        <button type="submit">Submit Review</button>
     </form>
-  </template>
+</template>
   
-  <script>
-  export default {
+<script>
+export default {
     data() {
-      return {
-        review: {
-          name: '',
-          email: '',
-          rating: '5',
-          content: '',
-        },
-      };
+        return {
+            review: {
+                name: '',
+                email: '',
+                rating: '5',
+                content: '',
+            },
+        };
     },
     methods: {
-      submitReview() {
-        // Validation logic can be added here before emitting the event
-        this.$emit('review-submitted', this.review);
-        this.resetForm();
-      },
-      resetForm() {
-        this.review = {
-          name: '',
-          email: '',
-          rating: '5',
-          content: '',
-        };
-      },
+        submitReview() {
+            // Validation logic can be added here before emitting the event
+            this.$emit('review-submitted', this.review);
+            this.resetForm();
+        },
+        resetForm() {
+            this.review = {
+                name: '',
+                email: '',
+                rating: '5',
+                content: '',
+            };
+        },
+        setRating(rating) {
+            // Set the rating when a star is clicked
+            this.review.rating = rating;
+        },
     },
-  };
-  </script>
+};
+</script>
   
 
 <style scoped>
@@ -90,6 +100,5 @@ button {
 button:hover {
     background-color: #45a049;
 }
-
 </style>
   

@@ -31,7 +31,6 @@
 
 
 <style scoped>
-
 header {
     position: fixed;
     top: 0;
@@ -56,5 +55,4 @@ header {
 
     border-radius: 4px;
 }
-
 </style>
