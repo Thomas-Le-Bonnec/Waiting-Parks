@@ -1,8 +1,8 @@
 <template>
     <div class="card">
-        <img src="../../assets/disneyland-park.jpg">
+        <img :src="park.image">
         <div class="title">
-            <h4>Disneyland Park</h4>
+            <h4>{{ park.name }}</h4>
         </div>
     </div>
 </template>
@@ -12,7 +12,9 @@
 
 
 <script>
-
+export default {
+    props: ['park']
+}
 </script>
 
 

@@ -1,29 +1,9 @@
 <template>
     <section>
-        <h2>France</h2>
+        <h2>{{ country.name }}</h2>
 
         <div class="carroussel">
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
-            <ParkCard></ParkCard>
+            <ParkCard v-for="park in country.parks" :key="park.name" :park="park"></ParkCard>
         </div>
     </section>
 </template>
@@ -42,6 +22,8 @@ export default {
     components: {
         ParkCard
     },
+
+    props: ['country']
 }
 </script>
 

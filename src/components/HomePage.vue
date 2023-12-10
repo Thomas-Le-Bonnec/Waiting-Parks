@@ -1,6 +1,6 @@
 <template>
     <BannerView></BannerView>
-    <ParkCarroussel></ParkCarroussel>
+    <ParkCarroussel v-for="country in this.parksByCountries" :key="country.name" :country="country"></ParkCarroussel>
 </template>
 
 
@@ -15,6 +15,12 @@ import ParkCarroussel from './ReusableComponents/ParkCarroussel.vue'
 export default {
     components: {
         BannerView, ParkCarroussel
+    },
+
+    props: ['parksByCountries'],
+
+    mounted() {
+        console.log(this.parksByCountries);
     }
 }
 

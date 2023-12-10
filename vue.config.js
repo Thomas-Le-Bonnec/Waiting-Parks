@@ -12,3 +12,19 @@ module.exports = defineConfig({
     },
   },
 })
+
+/*
+module.exports = defineConfig({
+  transpileDependencies: true,
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/Waiting-Parks/'
+    : '/',
+  css: {
+    loaderOptions: {
+      sass: {
+        implementation: require('sass'),
+      },
+    },
+  },
+})
+*/

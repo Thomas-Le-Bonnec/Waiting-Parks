@@ -1,7 +1,7 @@
 <template>
     <NavigationBar ref="header"></NavigationBar>
     <main ref="pageContent">
-        <RouterView></RouterView>
+        <RouterView :parksByCountries="parksByCountry"></RouterView>
     </main>
     <FooterView></FooterView>
 </template>
@@ -11,6 +11,7 @@
 
 
 <script>
+import { parks, sortParksByCountry } from './data/parks.js'
 import FooterView from './components/ReusableComponents/FooterView.vue';
 import NavigationBar from './components/ReusableComponents/NavigationBar.vue';
 
@@ -21,6 +22,12 @@ export default {
     components: {
         NavigationBar,
         FooterView
+    },
+
+    data() {
+        return {
+            parks
+        };
     },
 
     methods: {
@@ -37,6 +44,12 @@ export default {
 
     updated() {
         this.addPaddingOnLoad();
+    },
+
+    computed: {
+        parksByCountry() {
+            return sortParksByCountry(this.parks);
+        }
     }
 }
 </script>
