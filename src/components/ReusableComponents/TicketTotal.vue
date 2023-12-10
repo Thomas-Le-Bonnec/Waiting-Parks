@@ -26,9 +26,9 @@ export default {
 };
 </script>
 
-<style scoped>
-@import '../../styles/main.css';
-@import '../../styles/responsive.css';
+<style lang="scss" scoped>
+@import '../../styles/main.scss';
+@import '../../styles/responsive.scss';
 
 .total-container {
     margin-top: 20px;

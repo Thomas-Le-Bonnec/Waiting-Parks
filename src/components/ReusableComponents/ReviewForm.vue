@@ -16,7 +16,7 @@
             <i class="fas fa-star"></i> Rating:
             <ul class="star-rating">
                 <li v-for="star in 5" :key="star" @click="setRating(star)">
-                    <i :class="{ 'fas fa-star': star <= review.rating, 'far fa-star': star > review.rating }"></i>
+                    <i :class="starClass(star)"></i>
                 </li>
             </ul>
         </label>
@@ -60,14 +60,21 @@ export default {
             // Set the rating when a star is clicked
             this.review.rating = rating;
         },
+        starClass(star) {
+            return {
+                'fas fa-star': star <= this.review.rating,
+                'far fa-star': star > this.review.rating,
+                'star-active': star <= this.review.rating,
+            };
+        },
     },
 };
 </script>
   
 
-<style scoped>
-@import '../../styles/main.css';
-@import '../../styles/responsive.css';
+<style lang="scss" scoped>
+@import '../../styles/main.scss';
+@import '../../styles/responsive.scss';
 
 
 

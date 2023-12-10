@@ -24,6 +24,4 @@ export default {
 
 
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,6 +1,12 @@
-.reviews {
+/* Common styles for components with max-width and centered margin */
+.centered-container {
     max-width: 600px;
     margin: auto;
+}
+
+/* Reviews List */
+.reviews {
+    @extend .centered-container;
 }
 
 ul {
@@ -35,47 +41,83 @@ ul {
     color: #777;
 }
 
+/* Review Form */
 .review-form {
-    max-width: 400px;
-    margin: auto;
+    @extend .centered-container;
     padding: 20px;
     background-color: #f8f8f8;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Amusement Park Ticket */
 .amusement-park-ticket {
     display: flex;
     margin: 20px;
     overflow: hidden;
 }
 
+/* Ticket Image */
 .ticket-image img {
     width: 100%;
     max-width: 200px;
     height: auto;
 }
 
+/* Ticket Details */
 .ticket-details {
     padding: 20px;
 }
 
+/* Price Options */
 .price-options {
     display: flex;
     flex-direction: column;
 }
 
+/* Price Option */
 .price-option {
     margin-bottom: 10px;
 }
 
+/* Ticket Price */
 .ticket-price {
     font-weight: bold;
     margin-top: 10px;
 }
 
+/* Ticket Container */
 .ticket-container {
+    @extend .centered-container;
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+}
+
+
+/* Star Rating Styles */
+.star-rating {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.star-rating li {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.star-rating i {
+    font-size: 24px;
+    color: #ffd700;
+    /* default star color */
+}
+
+.star-rating i.fas.fa-star {
+    color: #ffac33;
+    /* filled star color */
+}
+
+.star-rating i.star-active {
+    color: #ffac33;
+    /* active star color */
 }
