@@ -1,45 +1,58 @@
 <template>
-    <div>
-        <TicketTotal :total="total" @reset-cart="resetCart" />
-        <AmusementParkTicketContainer @ticket-purchased="handleTicketPurchase" />
-        <ReviewForm @review-submitted="handleReviewSubmission" />
-        <Reviews :reviews="reviews" />
+    <SubviewBanner :image="require('@/assets/' + 'ticket-image.jpg' + '')" title="Buy a Ticket"></SubviewBanner>
+    <CartView :cartItems="cart" @delete-cart-item="deleteCartItem"></CartView>
+    <BuyTicketView @new-cart-item="newCartItem"></BuyTicketView>
+    <AddCommentView @new-comment="newComment"></AddCommentView>
+
+    <div v-for="comment in comments" :key="comment.id()">
+        <CommentCell :comment="comment"></CommentCell>
     </div>
 </template>
-  
+
+
+
+
+
 <script>
-import AmusementParkTicketContainer from './ReusableComponents/AmusementParkTicketContainer.vue';
-import TicketTotal from './ReusableComponents/TicketTotal.vue';
-import ReviewForm from './ReusableComponents/ReviewForm.vue';
-import Reviews from './ReusableComponents/ReviewsList.vue';
+import AddCommentView from './BuyTicket/AddCommentView.vue';
+import BuyTicketView from './BuyTicket/BuyTicketView.vue';
+import CartView from './BuyTicket/CartView.vue';
+import CommentCell from './BuyTicket/CommentCell.vue';
+import SubviewBanner from './ReusableComponents/SubviewBanner.vue';
 
 export default {
     components: {
-        ReviewForm,
-        Reviews,
-        AmusementParkTicketContainer,
-        TicketTotal
-    },
+    BuyTicketView, CartView, SubviewBanner, AddCommentView,
+    CommentCell
+},
+
     data() {
         return {
-            reviews: [],
-            total: 0,
-        };
+            cart: [],
+            comments: []
+        }
     },
+
     methods: {
-        handleReviewSubmission(review) {
-            // Handle the submitted review and update the reviews array
-            this.reviews.push(review);
+        newCartItem(cartItem) {
+            this.cart.push(cartItem);
         },
-        handleTicketPurchase(price) {
-            // Update the total when a ticket is purchased
-            this.total += price;
+
+        deleteCartItem(index) {
+            if (index !== -1) {
+                this.cart.splice(index, 1);
+            }
         },
-        resetCart() {
-            // Reset the total when the cart is reset
-            this.total = 0;
-        },
-    },
-};
+
+        newComment(comment) {
+            this.comments.push(comment);
+        }
+    }
+}
 </script>
-  
+
+
+
+
+<style>
+</style>
