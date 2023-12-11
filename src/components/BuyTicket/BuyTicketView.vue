@@ -12,17 +12,17 @@
 
                 <div id="picker">
                     <div>
-                    <input type="radio" id="regular" value="Regular" v-model="option">
-                    <label for="regular">Regular</label>
+                        <input type="radio" id="regular" value="Regular" v-model="option">
+                        <label for="regular">Regular</label>
                     </div>
                     <div>
-                    <input type="radio" id="fastpass" value="Fast Pass" v-model="option">
-                    <label for="fastpass">Fast Pass</label>
+                        <input type="radio" id="fastpass" value="Fast Pass" v-model="option">
+                        <label for="fastpass">Fast Pass</label>
                     </div>
                 </div>
 
                 <input type="text" v-model="name" placeholder="Name">
-                <input type="text" v-model="email" placeholder="eMail">
+                <input type="email" v-model="email" placeholder="Email">
 
                 <button>Add to cart</button>
             </form>
@@ -150,7 +150,8 @@ select {
     gap: 8px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
     display: flex;
     min-width: 200px;
     padding: 12px;
@@ -162,7 +163,9 @@ input[type="text"] {
     border: 1px solid var(--Gris-80, #646774);
 }
 
-select, input[type="text"] {
+select,
+input[type="text"],
+input[type="email"] {
     font-family: Avenir Next;
     font-size: 16px;
 }

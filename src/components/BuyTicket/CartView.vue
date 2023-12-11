@@ -1,6 +1,9 @@
 <template>
     <section v-if="cartItems.length != 0">
-        <h3>Cart</h3>
+        <div class="cart-title">
+            <h3>Cart</h3>
+            <p class="total">Total: {{ cartTotal.toFixed(2) }}$</p>
+        </div>
 
         <div v-for="cartItem in cartItems" :key="cartItem.id()" class="cartItem">
             <div class="informations">
@@ -38,10 +41,16 @@ export default {
         cartItems: [CartItem]
     },
 
+    computed: {
+        cartTotal() {
+            return this.cartItems.reduce((total, cartItem) => total + cartItem.price, 0);
+        },
+    },
+
     methods: {
         deleteCartItem(id) {
             const index = this.cartItems.findIndex(objet => objet.id() === id)
-            
+
             this.$emit("deleteCartItem", index)
         }
     },
@@ -97,5 +106,23 @@ section {
 
 button {
     background-color: #FFF;
+}
+
+.total {
+    align-self: flex-end;
+    font-weight: bold;
+    margin-bottom: 12px;
+    /* self align vertical center */
+}
+
+.cart-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.cart-title>p {
+    margin: 0;
 }
 </style>
