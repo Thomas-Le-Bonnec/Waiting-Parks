@@ -3,7 +3,7 @@
         <img :src="image">
         <h1>{{ title }}</h1>
         <div v-if="isPark">
-            <button id="favoriteButton" class="material-icons-outlined" @click="addToFavorites()"
+            <button id="favoriteButton" :class="buttonClassColor" @click="addToFavorites()"
                 style="position: absolute; top: 1.5rem; right: 2rem;">{{ buttonTitle }}</button>
         </div>
     </div>
@@ -21,12 +21,22 @@ export default {
         isPark: Boolean,
     },
 
+    data() {
+        return {
+            buttonTitleLocal: null,
+        }
+    },
+
     computed: {
         buttonTitle() {
-            console.log(localStorage.getItem('favorites'));
-            console.log(this.title);
-            console.log(localStorage.getItem('favorites').includes(this.title));
-            return localStorage.getItem('favorites').includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
+            if (this.buttonTitleLocal == null) {
+                return localStorage.getItem('favorites').includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
+            } else {
+                return this.buttonTitleLocal;
+            }
+        },
+        buttonClassColor() {
+            return this.buttonTitle == "Add to favorites" ? 'material-icons-outlined favorite' : 'material-icons-outlined remove';
         }
     },
 
@@ -52,8 +62,7 @@ export default {
             console.log(favoritesList);
             localStorage.setItem('favorites', JSON.stringify(favoritesList));
 
-            // Force re-rendering of the button
-            this.$forceUpdate();
+            this.buttonTitleLocal = localStorage.getItem('favorites').includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
         }
     },
 
@@ -88,5 +97,13 @@ export default {
     position: absolute;
     bottom: 1.5rem;
     left: 2rem;
+}
+
+.favorite {
+    background-color: var(--blue);
+}
+
+.remove {
+    background-color: #DA1919;
 }
 </style>
