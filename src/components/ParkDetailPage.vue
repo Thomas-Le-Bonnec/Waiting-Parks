@@ -1,7 +1,8 @@
 <template>
-    <SubviewBanner :image="park.image" :title="park.name"></SubviewBanner>
+    <SubviewBanner :image="park.image" :title="park.name" :isPark="true"></SubviewBanner>
     <div id="waitingTimes">
-        <WaitingTimeCell v-for="ride in waitingTimes" :key="ride.name" :rideName="ride.rideName" :waitingTime="ride.waitTime" :ago="ride.timeSinceUpdateSeconds"></WaitingTimeCell>
+        <WaitingTimeCell v-for="ride in waitingTimes" :key="ride.name" :rideName="ride.rideName"
+            :waitingTime="ride.waitTime" :ago="ride.timeSinceUpdateSeconds"></WaitingTimeCell>
     </div>
 </template>
 
@@ -15,9 +16,9 @@ import WaitingTimeCell from './ReusableComponents/WaitingTimeCell.vue';
 
 export default {
     components: {
-    SubviewBanner,
-    WaitingTimeCell
-},
+        SubviewBanner,
+        WaitingTimeCell
+    },
 
     data() {
         return {

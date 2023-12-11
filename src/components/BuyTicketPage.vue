@@ -1,5 +1,6 @@
 <template>
-    <SubviewBanner :image="require('@/assets/' + 'ticket-image.jpg' + '')" title="Buy a Ticket"></SubviewBanner>
+    <SubviewBanner :image="require('@/assets/' + 'ticket-image.jpg' + '')" title="Buy a Ticket" :isPark="false">
+    </SubviewBanner>
     <CartView :cartItems="cart" @delete-cart-item="deleteCartItem"></CartView>
     <BuyTicketView @new-cart-item="newCartItem"></BuyTicketView>
     <AddCommentView @new-comment="newComment"></AddCommentView>
@@ -22,9 +23,9 @@ import SubviewBanner from './ReusableComponents/SubviewBanner.vue';
 
 export default {
     components: {
-    BuyTicketView, CartView, SubviewBanner, AddCommentView,
-    CommentCell
-},
+        BuyTicketView, CartView, SubviewBanner, AddCommentView,
+        CommentCell
+    },
 
     data() {
         return {
@@ -54,5 +55,4 @@ export default {
 
 
 
-<style>
-</style>
+<style></style>

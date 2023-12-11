@@ -2,8 +2,10 @@
     <div id="banner">
         <img :src="image">
         <h1>{{ title }}</h1>
-        <button id="favoriteButton" class="material-icons-outlined" @click="addToFavorites()"
-            style="position: absolute; top: 1.5rem; right: 2rem;">Add to favorites</button>
+        <div v-if="isPark">
+            <button id="favoriteButton" class="material-icons-outlined" @click="addToFavorites()"
+                style="position: absolute; top: 1.5rem; right: 2rem;">{{ buttonTitle }}</button>
+        </div>
     </div>
 </template>
 
@@ -15,7 +17,17 @@
 export default {
     props: {
         image: String,
-        title: String
+        title: String,
+        isPark: Boolean,
+    },
+
+    computed: {
+        buttonTitle() {
+            console.log(localStorage.getItem('favorites'));
+            console.log(this.title);
+            console.log(localStorage.getItem('favorites').includes(this.title));
+            return localStorage.getItem('favorites').includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
+        }
     },
 
     methods: {
@@ -39,6 +51,9 @@ export default {
             // Update the favorites list in local storage
             console.log(favoritesList);
             localStorage.setItem('favorites', JSON.stringify(favoritesList));
+
+            // Force re-rendering of the button
+            this.$forceUpdate();
         }
     }
 }
