@@ -1,3 +1,5 @@
+import { FALLBACK_API_JSON } from "./parks.js";
+
 async function getDataFromAPI(apiUrl) {
     try {
         const response = await fetch(apiUrl);
@@ -5,11 +7,15 @@ async function getDataFromAPI(apiUrl) {
             const jsonData = await response.json();
             return jsonData;
         } else {
-            console.error(`Failed to retrieve data from API. Status code: ${response.status}`);
-            return null;
+            throw new Error(`Failed to retrieve data from API. Status code: ${response.status}`);
         }
     } catch (error) {
-        console.error("Error fetching data:", error);
+        for (const key in FALLBACK_API_JSON) {
+            console.log(key);
+            if (key === apiUrl) {
+                return FALLBACK_API_JSON[key];
+            }
+        }
         return null;
     }
 }
