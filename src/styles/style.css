@@ -15,6 +15,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -71,7 +72,7 @@ h5 {
 }
 
 .description {
-    color: #8E9093;
+    color: #8e9093;
     text-align: center;
     font-family: Avenir Next;
     font-size: 16px;
@@ -85,7 +86,6 @@ p {
     margin: 0;
 }
 
-
 a {
     text-decoration: none;
 }
@@ -93,7 +93,6 @@ a {
 a:active {
     color: var(--blue);
 }
-
 
 button {
     display: flex;
@@ -106,12 +105,11 @@ button {
     font-family: Avenir Next;
     font-size: 16px;
 
-    color: #FFF;
+    color: #fff;
     border: none;
     border-radius: 4px;
     background: var(--blue);
 }
-
 
 .important {
     font-weight: 600;
