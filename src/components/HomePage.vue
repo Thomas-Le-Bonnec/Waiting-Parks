@@ -24,6 +24,7 @@ export default {
 
     mounted() {
         console.log(this.parksByCountries);
+        console.log("favorites", localStorage.getItem('favorites'));
     }
 }
 

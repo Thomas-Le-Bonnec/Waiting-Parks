@@ -6,6 +6,11 @@
             </router-link>
         </div>
         <div class="link">
+            <router-link to="/Waiting-Parks/favorites">
+                <h5>Favorites</h5>
+            </router-link>
+        </div>
+        <div class="link">
             <router-link to="/Waiting-Parks/buyTicket">
                 <h5>Buy a Ticket</h5>
             </router-link>

@@ -2,6 +2,8 @@
     <div id="banner">
         <img :src="image">
         <h1>{{ title }}</h1>
+        <button id="favoriteButton" class="material-icons-outlined" @click="addToFavorites()"
+            style="position: absolute; top: 1.5rem; right: 2rem;">Add to favorites</button>
     </div>
 </template>
 
@@ -14,6 +16,30 @@ export default {
     props: {
         image: String,
         title: String
+    },
+
+    methods: {
+        addToFavorites() {
+            // add the title to the favorites list in the local storage
+            // if the title is already in the list, remove it
+            // Get the current favorites list from local storage
+            let favoritesList = JSON.parse(localStorage.getItem('favorites')) || [];
+
+            // Check if the title is already in the favorites list
+            const titleIndex = favoritesList.indexOf(this.title);
+
+            if (titleIndex === -1) {
+                // If the title is not in the list, add it
+                favoritesList.push(this.title);
+            } else {
+                // If the title is already in the list, remove it
+                favoritesList.splice(titleIndex, 1);
+            }
+
+            // Update the favorites list in local storage
+            console.log(favoritesList);
+            localStorage.setItem('favorites', JSON.stringify(favoritesList));
+        }
     }
 }
 </script>
