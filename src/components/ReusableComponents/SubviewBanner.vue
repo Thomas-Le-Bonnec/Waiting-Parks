@@ -30,7 +30,7 @@ export default {
     computed: {
         buttonTitle() {
             if (this.buttonTitleLocal == null) {
-                return localStorage.getItem('favorites').includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
+                return localStorage.getItem('favorites')?.includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
             } else {
                 return this.buttonTitleLocal;
             }
@@ -62,7 +62,7 @@ export default {
             console.log(favoritesList);
             localStorage.setItem('favorites', JSON.stringify(favoritesList));
 
-            this.buttonTitleLocal = localStorage.getItem('favorites').includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
+            this.buttonTitleLocal = localStorage.getItem('favorites')?.includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
         }
     },
 
