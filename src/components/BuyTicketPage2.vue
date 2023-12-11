@@ -2,6 +2,11 @@
     <SubviewBanner :image="require('@/assets/' + 'ticket-image.jpg' + '')" title="Buy a Ticket"></SubviewBanner>
     <CartView :cartItems="cart" @delete-cart-item="deleteCartItem"></CartView>
     <BuyTicketView @new-cart-item="newCartItem"></BuyTicketView>
+    <AddCommentView @new-comment="newComment"></AddCommentView>
+
+    <div v-for="comment in comments" :key="comment.id()">
+        <CommentCell :comment="comment"></CommentCell>
+    </div>
 </template>
 
 
@@ -9,18 +14,22 @@
 
 
 <script>
+import AddCommentView from './BuyTicket/AddCommentView.vue';
 import BuyTicketView from './BuyTicket/BuyTicketView.vue';
 import CartView from './BuyTicket/CartView.vue';
+import CommentCell from './BuyTicket/CommentCell.vue';
 import SubviewBanner from './ReusableComponents/SubviewBanner.vue';
 
 export default {
     components: {
-        BuyTicketView, CartView, SubviewBanner
-    },
+    BuyTicketView, CartView, SubviewBanner, AddCommentView,
+    CommentCell
+},
 
     data() {
         return {
-            cart: []
+            cart: [],
+            comments: []
         }
     },
 
@@ -33,6 +42,10 @@ export default {
             if (index !== -1) {
                 this.cart.splice(index, 1);
             }
+        },
+
+        newComment(comment) {
+            this.comments.push(comment);
         }
     }
 }
