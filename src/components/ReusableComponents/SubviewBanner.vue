@@ -30,6 +30,10 @@ export default {
     computed: {
         buttonTitle() {
             if (this.buttonTitleLocal == null) {
+                if (localStorage.getItem('favorites') == null) {
+                    localStorage.setItem('favorites', JSON.stringify([]));
+                    return 'Add to favorites';
+                }
                 return localStorage.getItem('favorites')?.includes(this.title) ? 'Remove from favorites' : 'Add to favorites';
             } else {
                 return this.buttonTitleLocal;
