@@ -6,7 +6,7 @@
             </router-link>
         </div>
         <div class="link">
-            <router-link to="/buyTicket">
+            <router-link to="/Waiting-Parks/buyTicket">
                 <h5>Buy a Ticket</h5>
             </router-link>
         </div>

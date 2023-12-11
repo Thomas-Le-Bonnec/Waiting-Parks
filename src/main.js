@@ -13,9 +13,10 @@ const app = createApp(App)
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
-		{ path: '/', component: HomePage },
-        { path: '/park/:parkName', component: ParkDetailPage },
-		{ path: '/buyTicket', component: BuyTicketPage }
+		{ path: '/', redirect: { name: 'home' } },
+		{ path: '/Waiting-Parks/', component: HomePage, name: 'home' },
+		{ path: '/Waiting-Parks/park/:parkName', component: ParkDetailPage },
+		{ path: '/Waiting-Parks/buyTicket', component: BuyTicketPage }
 	]
 })
 

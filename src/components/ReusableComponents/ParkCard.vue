@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="'/park/' + park.name">
+    <router-link :to="'park/' + park.name">
         <div class="card">
             <img :src="park.image">
             <div class="title">
