@@ -4,7 +4,8 @@ class Park {
         this.country = country;
         this.image = image;
         this.apiURL = apiURL;
-        this.price = 10;
+        this.regalarPrice = 10;
+        this.fastPassPrice = 20;
     }
 }
 

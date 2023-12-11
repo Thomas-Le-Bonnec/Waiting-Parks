@@ -55,7 +55,14 @@ export default {
             e.preventDefault()
 
             if (this.name != "" && this.email != "") {
-                let newCartItem = new CartItem(this.selectedParkName, this.option, this.selectedPark.price, this.name, this.email);
+                let price = 0
+                if (this.option == "Regular") {
+                    price = this.selectedPark.regularPrice
+                } else {
+                    price = this.selectedPark.fastPassPrice
+                }
+
+                let newCartItem = new CartItem(this.selectedParkName, this.option, price, this.name, this.email);
                 this.$emit('newCartItem', newCartItem);
                 this.resetInputs();
             }

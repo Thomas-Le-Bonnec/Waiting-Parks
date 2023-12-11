@@ -15,7 +15,7 @@
                     <p>{{ cartItem.option }}</p>
                 </div>
 
-                <button :on-click="deleteCartItem(cartItem.id())"><img src="../../assets/trash.svg"></button>
+                <button @click="deleteCartItem(cartItem.id())"><img src="../../assets/trash.svg"></button>
             </div>
         </div>
     </section>
@@ -43,7 +43,6 @@ export default {
             const index = this.cartItems.findIndex(objet => objet.id() === id)
             
             this.$emit("deleteCartItem", index)
-            console.log("HELWOHER")
         }
     },
 
