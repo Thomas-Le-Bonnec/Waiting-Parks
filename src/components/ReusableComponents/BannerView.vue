@@ -1,7 +1,7 @@
 <template>
     <div id="banner">
         <img src="../../assets/banner-image.jpg">
-        <h1>Waiting Times in Parks</h1>
+        <h1>{{ title }}</h1>
     </div>
 </template>
 
@@ -10,6 +10,22 @@
 
 
 <script>
+export default {
+    name: 'BannerView',
+
+    props: {
+        image: {
+            type: String,
+            required: false,
+            default: '../../assets/banner-image.jpg'
+        },
+        title: {
+            type: String,
+            required: false
+        },
+    },
+}
+
 </script>
 
 

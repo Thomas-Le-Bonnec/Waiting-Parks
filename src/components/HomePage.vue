@@ -1,5 +1,5 @@
 <template>
-    <BannerView></BannerView>
+    <BannerView title="Waiting Times in Parks"></BannerView>
     <ParkCarroussel v-for="country in this.parksByCountries" :key="country.name" :country="country"></ParkCarroussel>
 </template>
 

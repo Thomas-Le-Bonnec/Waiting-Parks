@@ -55,6 +55,10 @@ export default {
             // Force re-rendering of the button
             this.$forceUpdate();
         }
+    },
+
+    mounted() {
+        console.log("mounted");
     }
 }
 </script>

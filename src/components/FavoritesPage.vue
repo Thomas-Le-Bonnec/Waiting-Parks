@@ -1,7 +1,11 @@
 <template>
-    <BannerView></BannerView>
-    <div v-if="countries?.length === 0">
-        <h2>You have no favorites yet</h2>
+    <BannerView title="Favorites"></BannerView>
+    <div v-if="countries?.length == 0">
+        <section>
+            <h2>You have no favorites yet</h2>
+            <!-- add empty view to make page at least full -->
+            <div class="empty"></div>
+        </section>
     </div>
     <div v-else v-for="country in countries" :key="country.name">
         <div v-if="country.parks.length > 0">
@@ -42,22 +46,24 @@ export default {
         },
         countries() {
             return this.parksByCountries.map(country => {
-                console.log("parks", country.parks.filter(park => this.favorites.includes(park.name)));
-                for (let i = 0; i < country.parks.length; i++) {
-                    console.log(country.parks[i].name);
-                    console.log(this.favorites.includes(country.parks[i].name));
+                let parks = country.parks.filter(park => this.favorites.includes(park.name));
+                if (parks.length > 0) {
+                    return {
+                        name: country.name,
+                        parks: parks
+                    }
+                } else {
+                    return null;
                 }
-                return {
-                    name: country.name,
-                    parks: country.parks.filter(park => this.favorites.includes(park.name))
-                }
+            }).filter(country => {
+                return country != null;
             });
         }
     },
 
     mounted() {
         console.log(this.parksByCountries);
-        console.log("favorites", this.favorites);
+        console.log("favorites", this.countries);
     }
 }
 
@@ -84,5 +90,10 @@ section .carroussel {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
     grid-gap: 2rem;
+}
+
+section .empty {
+    width: 12.5rem;
+    height: 12.5rem;
 }
 </style>
