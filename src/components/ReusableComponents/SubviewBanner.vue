@@ -1,7 +1,7 @@
 <template>
     <div id="banner">
-        <img :src="park.image">
-        <h1>{{ park.name }}</h1>
+        <img :src="image">
+        <h1>{{ title }}</h1>
     </div>
 </template>
 
@@ -10,11 +10,10 @@
 
 
 <script>
-import { Park } from '@/data/parks';
-
 export default {
     props: {
-        park: Park
+        image: String,
+        title: String
     }
 }
 </script>

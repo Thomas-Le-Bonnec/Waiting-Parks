@@ -1,5 +1,5 @@
 <template>
-    <SubviewBanner :park="park"></SubviewBanner>
+    <SubviewBanner :image="park.image" :title="park.name"></SubviewBanner>
     <div id="waitingTimes">
         <WaitingTimeCell v-for="ride in waitingTimes" :key="ride.name" :rideName="ride.rideName" :waitingTime="ride.waitTime" :ago="ride.timeSinceUpdateSeconds"></WaitingTimeCell>
     </div>

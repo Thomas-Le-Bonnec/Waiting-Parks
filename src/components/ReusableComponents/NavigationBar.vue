@@ -6,13 +6,8 @@
             </router-link>
         </div>
         <div class="link">
-            <router-link to="/favorites">
-                <h5>My Favorite Parks</h5>
-            </router-link>
-        </div>
-        <div class="link">
-            <router-link to="/test">
-                <h5>Test</h5>
+            <router-link to="/buyTicket">
+                <h5>Buy a Ticket</h5>
             </router-link>
         </div>
     </header>

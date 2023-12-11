@@ -4,6 +4,7 @@ class Park {
         this.country = country;
         this.image = image;
         this.apiURL = apiURL;
+        this.price = 10;
     }
 }
 
@@ -25,9 +26,14 @@ const parcAsterix = new Park("Parc Astérix", "France", "https://s3.travel-cdn.n
 const futuroscope = new Park("Futuroscope", "France", "https://cdn.sortiraparis.com/images/80/101137/922095-futuroscope-visuels-juillet-2023.jpg", "/api/fr/parks/291/queue_times.json");
 const walibiRhoneAlpes = new Park("Walibi Rhône-Alpes", "France", "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/84/81/ba/mystic-nouvelle-attraction.jpg?w=1200&h=-1&s=1", "/api/fr/parks/301/queue_times.json");
 
+// USA
+const disneylandLosAngeles = new Park("Disneyland Los Angeles", "USA", "https://source.unsplash.com/the-top-of-a-building-under-a-cloudy-blue-sky-45P-Jib0OHA", "/api/parks/16/queue_times.json");
+const disneyCaliforniaAdventure = new Park("Disneyland California Adventure", "USA", "https://source.unsplash.com/a-ferris-wheel-with-flowers-in-front-of-it-G_IW5FLKZiQ", "/api/parks/17/queue_times.json");
+
+
 
 // Parks List
-const parks = [disneylandPark, waltDisneyStudio, parcAsterix, futuroscope, walibiRhoneAlpes];
+const parks = [disneylandPark, waltDisneyStudio, parcAsterix, futuroscope, walibiRhoneAlpes, disneylandLosAngeles, disneyCaliforniaAdventure];
 
 
 
